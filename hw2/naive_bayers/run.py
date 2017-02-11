@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 import numpy as np
-import csv
 # import the required packages here
 
-def run(Xtrain_file, Ytrain_file, test_data_file, pred_file):
+def run(Xtrain_file, Ytrain_file, test_data_file=None, pred_file=None):
     '''The function to run your ML algorithm on given datasets, generate the predictions and save them into the provided file path
 
     Parameters
@@ -20,6 +19,8 @@ def run(Xtrain_file, Ytrain_file, test_data_file, pred_file):
 
     ## your implementation here
     # read data from Xtrain_file, Ytrain_file and test_data_file
+    X_train = np.genfromtxt(Xtrain_file, delimiter=',')
+    Y_train = np.genfromtxt(Ytrain_file, delimiter=',')
 
     # your algorithm
 
@@ -27,5 +28,5 @@ def run(Xtrain_file, Ytrain_file, test_data_file, pred_file):
 
 
 # define other functions here
-def loadCSV(filename):
-    
+if __name__ == '__main__':
+    run('../data/Xtrain.csv', '../data/Ytrain.csv')
